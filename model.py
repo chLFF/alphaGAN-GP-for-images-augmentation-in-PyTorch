@@ -133,7 +133,7 @@ class Generator(nn.Module):
     def __init__(self, z_size: int = 256, channel: int = 32):
         super(Generator, self).__init__()
         c = channel
-        z_size = z_size
+        self.z_size = z_size
 
         self.upsample1 = nn.Sequential(
             nn.ConvTranspose2d(z_size, c*32, 4, 1, 0, bias=False),
